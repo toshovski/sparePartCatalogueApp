@@ -8,11 +8,8 @@ phases:
     commands:
       - echo $USERNAME $PASSWORD
       - docker login sdp.registry.abas.sh -u $USERNAME -p $PASSWORD
-      - echo "Hello world!"
       - docker-compose up -d
       - sleep 45
       - docker ps
-      - ./initGradleProperties.sh
-      - docker-compose up -d
       - ./gradlew checkPreconditions fullInstall --stacktrace
       - ./gradlew instrumentJfopServer verify codeCoverageVerification calculateCodeCoverage
