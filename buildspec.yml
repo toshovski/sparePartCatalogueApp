@@ -14,5 +14,5 @@ phases:
       - docker ps
       - ./initGradleProperties.sh
       - docker-compose up -d
-      - ./gradlew checkPreconditions fullInstall
+      - ./gradlew checkPreconditions fullInstall --stacktrace
       - ./gradlew instrumentJfopServer verify codeCoverageVerification calculateCodeCoverage
