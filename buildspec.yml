@@ -10,6 +10,7 @@ phases:
       - docker login sdp.registry.abas.sh -u $USERNAME -p $PASSWORD
       - docker-compose up -d
       - sleep 45
+      - ./initGradleProperties.sh
       - docker ps
       - ./gradlew checkPreconditions fullInstall --stacktrace
       - ./gradlew instrumentJfopServer verify codeCoverageVerification calculateCodeCoverage
