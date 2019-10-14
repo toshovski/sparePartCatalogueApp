@@ -7,7 +7,7 @@ phases:
       docker: 18
     commands:
       - echo $USERNAME $PASSWORD
-      - docker login partner.registry.abas.sh -u $USERNAME -p $PASSWORD
+      - docker login sdp.registry.abas.sh -u $USERNAME -p $PASSWORD
       - echo "Hello world!"
       - docker-compose up -d
       - sleep 45
