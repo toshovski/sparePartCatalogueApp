@@ -10,4 +10,9 @@ phases:
       - docker login partner.registry.abas.sh -u $USERNAME -p $PASSWORD
       - echo "Hello world!"
       - docker-compose up -d
+      - sleep 45
       - docker ps
+      - ./initGradleProperties.sh
+      - docker-compose up -d
+      - ./gradlew checkPreconditions fullInstall
+      - ./gradlew instrumentJfopServer verify codeCoverageVerification calculateCodeCoverage

@@ -21,4 +21,8 @@ SSH_KEY=
 
 installType=SSH
 
+esdkSnapshotURL=https://registry.abas.sh/artifactory/abas.esdk.snapshots/
+esdkReleaseURL=https://registry.abas.sh/artifactory/abas.esdk.releases/
+
+
 version=0.6.10-SNAPSHOT
