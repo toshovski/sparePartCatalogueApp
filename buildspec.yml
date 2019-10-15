@@ -6,7 +6,6 @@ phases:
       java: openjdk8
       docker: 18
     commands:
-      - echo $USERNAME $PASSWORD
       - docker login sdp.registry.abas.sh -u $USERNAME -p $PASSWORD
       - docker-compose up -d
       - sleep 45
@@ -16,3 +15,7 @@ phases:
       - ./gradlew instrumentJfopServer verify codeCoverageVerification calculateCodeCoverage
     finally:
       - docker-compose down
+cache:
+  paths:
+    - '/root/.m2/**/*'
+    - ''

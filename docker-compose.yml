@@ -24,7 +24,7 @@ services:
     # Als root-user gibt es sonst Probleme wegen dem ulimit der open files.
     user: s3
     hostname: dockerbau
-    command: run
+    command: ["sh", "-c", "cd /abas/erp && eval $$(sh denv.sh) && datmod -s && echo success && pwd && /data/starteVersion.sh run" ]
 
     # nexus for publishing abas Essentials libraries
   nexus:
