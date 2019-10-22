@@ -13,8 +13,6 @@ phases:
       - docker ps
       - ./gradlew checkPreconditions fullInstall --stacktrace
       - ./gradlew instrumentJfopServer verify codeCoverageVerification calculateCodeCoverage
-    finally:
-      - docker-compose down
 cache:
   paths:
     - '/root/.m2/**/*'
